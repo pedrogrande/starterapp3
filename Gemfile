@@ -12,6 +12,11 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 
+gem 'rolify'
+gem 'geocoder'
+gem 'cloudinary'
+gem 'carrierwave'
+gem 'friendly_id'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
