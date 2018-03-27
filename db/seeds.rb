@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# user = User.create(email: 'seller@gmail.com', password: '12345678', user_type: 'seller')
-# puts "User created: " + user.email
-
+user = User.create(email: 'seller@gmail.com', password: '12345678', user_type: 'seller')
+puts "User created: " + user.email
+SellerProfile.create!(name: "Pam's Quality Goods", :address => "13 Abercrombie Street", :suburb => "Chippendale", :state => "NSW", :postcode = "2008", :country => "AU", bio: "Pam sells only quality goods. You can find Pam searching the internet looking for the best deals for you.", user_id: user.id)
 p1 = Product.create(name: 'Google Home', description: "Google Home is a powerful speaker and voice Assistant. Play your music. Call your friends. Ask it questions. Control your home. It's your own Google, always ready to help.", price: 199.0, num_in_stock: 1000)
 puts "Product created: " + p1.name
 
