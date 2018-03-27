@@ -1,5 +1,5 @@
 <div class="card">
-  <img class="card-img-top" src="<%= product.image_url %>" alt="Card image cap">
+  <a href="<%= product_path(product) %>"><img class="card-img-top" src="<%= product.image_url %>" alt="Card image cap"></a>
   <div class="card-body">
     <h4 class="card-title">
       <%= link_to product.name, product %>
@@ -10,9 +10,11 @@
       <span class="badge badge-secondary"><%= product.num_in_stock %> in stock</span>
     </p>
   </div>
-  <% if true %>
+  <% if user_signed_in? %>
+    <% if current_user == product.seller_profile.user %>
     <div class="card-footer text-muted">
       <%= link_to '<i class="fa fa-edit"></i> EDIT'.html_safe, edit_product_path(product) %>
     </div>
+    <% end %>
   <% end %>
 </div>
