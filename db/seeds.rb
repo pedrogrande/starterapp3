@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create(email: 'seller@gmail.com', password: '12345678', user_type: 'seller')
+puts "User created: " + user.email
+
+p1 = Product.create(name: 'Google Home', description: "Google Home is a powerful speaker and voice Assistant. Play your music. Call your friends. Ask it questions. Control your home. It's your own Google, always ready to help.', price: 199.0Google Home is a powerful speaker and voice Assistant. Play your music. Call your friends. Ask it questions. Control your home. It's your own Google, always ready to help.", price: 199.0, num_in_stock: 1000, image: Rails.root.join('public', 'google-home.png'))
+puts "Product created: " + p1.name
+
+p2 = Product.create(name: 'Chromecast Ultra', description: "Stream entertainment to your 4K Ultra HD TV in striking detail. No 4K TV? No problem. Chromecast Ultra automatically optimizes for the maximum your TV can deliver.", price: 99.0, num_in_stock: 800, image: Rails.root.join('public', 'chromecastultra.jpg'))
+puts "Product created: " + p2.name
+
+p3 = Product.create(name: 'Pixel 2 XL', description: "The unlocked Pixel 2 provides a clean, bloat-free experience with no unwanted apps, one of the highest rated smartphone cameras, with free unlimited storage.", price: 999.0, num_in_stock: 100, image: Rails.root.join('public', 'pixel.png'))
+puts "Product created: " + p3.name

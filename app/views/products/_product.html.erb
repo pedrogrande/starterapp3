@@ -1,13 +1,18 @@
 <div class="card">
+  <img class="card-img-top" src="<%= product.image_url %>" alt="Card image cap">
   <div class="card-body">
-    <div class="row">
-      <div class="col-md-2">
-        <%= image_tag product.image_url, class: 'img-fluid' %>
-      </div>
-      <div class="col-md-10">
-        <h5 class="card-title"><%= product.name %></h5>
-        <p><%= product.description %></p>
-      </div>
-    </div>
+    <h4 class="card-title">
+      <%= link_to product.name, product %>
+    </h4>
+    <p class="card-text"><%= product.description %></p>
+    <p class="card-text">
+      <small class="text-muted"><%= number_to_currency(product.price) %> </small>
+      <span class="badge badge-secondary"><%= product.num_in_stock %> in stock</span>
+    </p>
   </div>
+  <% if true %>
+    <div class="card-footer text-muted">
+      <%= link_to '<i class="fa fa-edit"></i> EDIT'.html_safe, edit_product_path(product) %>
+    </div>
+  <% end %>
 </div>

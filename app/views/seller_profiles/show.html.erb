@@ -1,48 +1,39 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="card">
       <%= image_tag @seller_profile.logo_url, class: 'card-img-top' %>
       <div class="card-body">
         <h5 class="card-title"><%= @seller_profile.name %></h5>
 
       <p>
-        <strong>Email:</strong>
-        <%= @seller_profile.user.email %>
-      </p>
-
-
-      <p>
-        <strong>Bio:</strong>
+        <strong>Seller bio</strong><br>
         <%= @seller_profile.bio %>
       </p>
-
-
       <p>
-        <strong>Address:</strong>
+        <strong>Address</strong><br>
         <%= @seller_profile.full_address %>
       </p>
-
+      <p>
+        <strong>Email</strong><br>
+        <%= @seller_profile.user.email %>
+      </p>
       <div id="map"></div>
-
-
       <% if @seller_profile == current_user.seller_profile %>
         <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_seller_profile_path(@seller_profile), class: 'btn btn-primary' %>
       <% end %>
-</div>
-
+    </div>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       <i class="fa fa-plus-square"></i> Add Product
     </button>
     <hr>
-    <div id="product-list">
+    <div>
+    <div id="product-list" class="card-deck">
       <%= render @products %>
     </div>
-
-
   </div>
 </div>
 
