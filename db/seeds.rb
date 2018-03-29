@@ -18,3 +18,6 @@ puts "Product created: " + p2.name
 
 p3 = Product.create(seller_profile_id: sp.id, name: 'Pixel 2 XL', description: "The unlocked Pixel 2 provides a clean, bloat-free experience with no unwanted apps, one of the highest rated smartphone cameras, with free unlimited storage.", price: 999.0, num_in_stock: 100)
 puts "Product created: " + p3.name
+
+
+wz/CB8sopLuttL4r%V4VP3#?e
