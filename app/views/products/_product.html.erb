@@ -8,6 +8,7 @@
     <p class="card-text">
       <small class="text-muted"><%= number_to_currency(product.price) %> </small>
       <span class="badge badge-secondary"><%= product.num_in_stock %> in stock</span>
+      <%= link_to 'Add to cart', add_to_carts_path(product_id: product.id), class: 'btn btn-success', remote: true %>
     </p>
   </div>
   <% if user_signed_in? %>

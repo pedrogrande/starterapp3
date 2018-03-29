@@ -1,0 +1,4 @@
+<% message = @product.name + " has been added to your cart." %>
+$('#cart').html('<%= j render partial: "layouts/cart", locals: { message: message } %>');
+$('#cart').slideDown('fast');
+$('#cart-num-items').html("<%= j render partial: 'layouts/cart_num_items', locals: { cart: @cart } %>")
