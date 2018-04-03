@@ -5,13 +5,12 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-      <% if @cart %>
-        <li class="nav-item">
-          <a href="#" class="nav-link btn btn-outline-info mr-sm-2" id="cart-num-items">
+
+        <li class="nav-item" id="cart-num-items" style="display:none;">
             <%= render partial: 'layouts/cart_num_items', locals: { cart: @cart } %>
-          </a>
+
         </li>
-      <% end %>
+
       <li class="nav-item">
         <a href="/users/sign_up?user_type=seller" class="nav-link btn btn-outline-info">SELL STUFF</a>
       </li>

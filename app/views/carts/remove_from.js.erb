@@ -1,0 +1,3 @@
+$('#cart_product_row_<%= @cart_product.id %>').slideUp('fast');
+$('#cart-num-items').html("<%= j render partial: 'layouts/cart_num_items', locals: { cart: @cart } %>");
+$('#cart-total').html('<%= number_to_currency(@cart.cart_value) %>');

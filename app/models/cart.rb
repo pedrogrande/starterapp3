@@ -10,6 +10,14 @@ class Cart < ApplicationRecord
   end
 
   def num_items
-    self.cart_products.count
+    self.cart_products.sum(:num)
+  end
+
+  def cart_value
+    value = 0.0
+    self.cart_products.each do |cp|
+      value = value + (cp.num * cp.product.price)
+    end
+    return value
   end
 end

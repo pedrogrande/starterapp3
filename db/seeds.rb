@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create(email: 'seller@gmail.com', password: '12345678', user_type: 'seller')
+user = User.create(email: 'seller2@gmail.com', password: '12345678', user_type: 'seller')
 puts "User created: " + user.email
 sp = SellerProfile.create!(name: "Pam's Quality Goods", :address => "13 Abercrombie Street", :suburb => "Chippendale", :state => "NSW", :postcode => "2008", :country => "AU", bio: "Pam sells only quality goods. You can find Pam searching the internet looking for the best deals for you.", user_id: user.id)
 

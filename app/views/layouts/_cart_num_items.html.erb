@@ -1,1 +1,3 @@
-<i class="fas fa-shopping-cart"></i> <%= pluralize(cart.num_items, 'item') %>
+<a href="/my_cart" class="nav-link btn btn-outline-info mr-sm-2" >
+<i class="fas fa-shopping-cart"></i> <%= number_to_currency(cart.cart_value) %>  <span class="badge badge-secondary"><%= pluralize(cart.num_items, 'item') %></span>
+</a>
