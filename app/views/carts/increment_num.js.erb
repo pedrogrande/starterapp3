@@ -1,0 +1,4 @@
+$('#cart-num-items').html("<%= j render partial: 'layouts/cart_num_items', locals: { cart: @cart } %>");
+$('#cart-total').html('<%= number_to_currency(@cart.cart_value) %>');
+$('#num-<%= @cart_product.id %>').html('<%= @cart_product.num %>');
+$('#subtotal-<%= @cart_product.id %>').html('<%= number_to_currency(@cart_product.num * @cart_product.product.price) %>');

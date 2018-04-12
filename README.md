@@ -11,4 +11,8 @@ It has
 - Fontawesome
 - Navbar
 - Pages: home, about, contact, privacy
-- Enquiries mailer 
+- Enquiries mailer
+
+rails g scaffold Order name email address suburb state postcode country phone paid:boolean cart:belongs_to
+
+rails g model LineItem product:belongs_to cart:belongs_to price:decimal num:integer

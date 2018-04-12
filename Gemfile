@@ -11,7 +11,7 @@ gem 'country_select'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
-
+gem 'stripe'
 gem 'rolify'
 gem 'geocoder'
 gem 'cloudinary'

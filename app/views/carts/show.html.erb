@@ -19,11 +19,14 @@
           <%= link_to product.name, product_path(product), target: '_blank' %>
         </td>
         <td class="text-center">
-          <%= cart_product.num %>
-          
+          <span id="num-<%= cart_product.id %>"><%= cart_product.num %></span>
+          <%= link_to '+', increment_num_cart_path(@cart, product_id: product.id), class: 'btn btn-outline-info btn-sm', remote: true %>
+          <% if cart_product.num > 1 %>
+            <%= link_to '-', decrement_num_cart_path(@cart, product_id: product.id), class: 'btn btn-outline-info btn-sm', remote: true %>
+          <% end %>
         </td>
         <td class="text-right"><%= number_to_currency(product.price) %></td>
-        <td class="text-right"><%= number_to_currency(cart_product.num * product.price) %></td>
+        <td class="text-right" id="subtotal-<%= cart_product.id %>"><%= number_to_currency(cart_product.num * product.price) %></td>
         <td><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, remove_from_cart_path(@cart, product_id: product.id), class: 'text-danger', remote: true %></td>
       </tr>
     <% end %>
@@ -34,3 +37,7 @@
     </tr>
   </tbody>
 </table>
+
+<div class="text-right">
+  <%= link_to 'Checkout', new_order_path, class: 'btn btn-success btn-lg' %>
+</div>

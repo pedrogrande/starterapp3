@@ -3,6 +3,10 @@ class CartProduct < ApplicationRecord
   belongs_to :product
 
   def increment_num
-    update(num: self.num + 1)
+    increment!(:num)
+  end
+
+  def decrement_num
+    decrement!(:num)
   end
 end

@@ -1,0 +1,19 @@
+
+<%= simple_form_for(@order) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :address %>
+    <%= f.input :suburb %>
+    <%= f.input :state %>
+    <%= f.input :postcode %>
+    <%= f.input :country %>
+    <%= f.input :phone %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Complete checkout", class: 'btn btn-success btn-lg' %>
+  </div>
+<% end %>
